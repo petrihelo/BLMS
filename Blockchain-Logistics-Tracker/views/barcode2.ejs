@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://www.cc.puv.fi/~e1401168/ekasivu/barcode2/barcode2.html -->
+<html>
+<head>
+  <title>Blockchain Logistics Tracker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+  body{
+    margin:50px 0;
+    margin-bottom:0;
+    padding:0;
+    text-align:center;
+  }
+  .btn{
+    font-size:25px;
+  }
+  .input{
+    width:230px;
+    height: 50px;
+    font-size:30px;
+  }
+  h2{
+    margin-top: 40px;
+    font-size:55px;
+  }
+  @media only screen and (orientation: landscape) {
+    .btn{
+      font-size:25px;
+    }
+    body{
+      margin:50px 0;
+      margin-bottom:0;
+      padding:0;
+      text-align:center;
+    }
+    .input{
+      width:75%;
+      height: 50px;
+      font-size:30px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Packet ID</h2>
+    <form action="/" method="post">
+      <div class="form-group ">
+        <input name="packetID" type="text" type="search" class="input"  placeholder="" autofocus>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <input name="companyName" type="hidden" value="VR">
+      </div>
+    </form>
+    <h2><%=messageToClient%></h2>
+  </div>
+  <script>
+  var suggestions="<%=suggestions%>";
+  var retrievedPackets='<%-retrievedPackets%>';
+  //if("<%=messageToClient%>"!="")
+  //alert("DEBUG:\n/getTX for link to etherscan\n/getFromEthereum for getting the data from ethereum as a string");
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "companies":
+              {
+              "VR":
+                  {
+                    "companyName":"VR","accountID":"0x376ac94C9922B1f85675790E11F78af92f80c59b"
+                  }
+                ,
+              "POSTI":
+                  {
+                    "companyName":"POSTI","accountID":"0x00354742a737dB28C18fc11Df784e56760bF0E4A"
+                  }
+                ,
+              "MATKAHUOLTO":
+                  {
+                    "companyName":"MATKAHUOLTO","accountID":"0xE3842CAACdd051a09f75633228c98a2a41f9BacB"
+                  }
+              }
+}
