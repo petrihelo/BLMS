@@ -1,0 +1,33 @@
+{
+  "name": "blockchain-logistics-tracker",
+  "version": "1.3.0",
+  "description": "blockchainlogisticstracker",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e1601515/Blockchain-Logistics-Tracker.git"
+  },
+  "author": "e1601515",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e1601515/Blockchain-Logistics-Tracker/issues"
+  },
+  "homepage": "https://github.com/e1601515/Blockchain-Logistics-Tracker#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "ethereumjs-tx": "^1.3.3",
+    "express": "^4.16.2",
+    "node-geocoder": "^3.21.1",
+    "qrcode": "^1.0.0",
+    "sqlite3": "^3.1.13",
+    "web3": "^0.19.1"
+  }
+}

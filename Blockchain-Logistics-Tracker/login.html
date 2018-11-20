@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Log In</title>
+  <meta charset="utf-8">
+  <!-- < meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+      
+    <!-- <script src="barcode2login.js"></script> -->
+  <style>
+  * {
+    box-sizing: border-box;
+   -webkit-box-sizing
+   -moz-box-sizing: border-box;
+   
+}
+  body{
+    margin:50px 0; 
+    padding:0px;
+    text-align:center;
+	
+  }
+    .form-group h2{
+   margin-top: 40px;
+   margin-right:26px;
+   font-size:60px;
+ 
+  }
+  .input{
+    width:260px;
+    height: 50px;
+    font-size:30px;
+  
+  }
+       .form-group span h2{
+
+   margin-right:105px;
+
+  }
+    .input:focus {
+    outline: #4CAF50 solid 1px;    
+}
+    .glyphicon {
+      font-size: 40px;
+	    float:right;
+}
+  .btn{
+  
+	font-size:25px;
+	margin-bottom:12px;
+	border-radius: 5px;
+	padding:13px 24px;
+	
+
+  }
+@media only screen and (orientation: landscape) {
+  body{
+    margin:50px 0; 
+    padding:0px;
+    text-align:center;
+	
+  }
+   .form-group h2{
+   margin-top: 40px;
+   font-size:65px;
+  display: inline;
+
+  }
+
+  .input{
+    width:45%;
+	height: 75px;
+	font-size:45px;
+	
+  }
+     .form-group span h2{
+
+   margin-right:107px;
+
+  }
+  .input:focus {
+    outline: #4CAF50 solid 1px;    
+}
+  .btn{
+   font-size:40px;
+    border-radius: 5px;
+	padding:5px 22px;
+
+    margin-right:-261px;
+margin-top: -11px;
+  }
+    .koko{
+      margin-top:-44px;
+
+  }
+    .glyphicon {
+      font-size: 40px;
+	    float:right;
+}}
+
+    </style>
+
+</head>
+<body >
+<div class="koko">
+<nav class="navbar navbar-light menu" style="background-color: #e3f2fd;">
+      <a href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/mainmenu.html"><span class="glyphicon glyphicon-home"></span></a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/mainmenu.html">Blockchain Logistics Tracker</a>
+      </div> </div>
+<div class="container">
+  <form  autocomplete="on">
+    <div class="form-group ">
+	<label for="frmNameA"></label>
+	  <h2>Operator</h2>
+      <input type="text"  class="input" name="name" id="one" placeholder="" required autocomplete="name" autofocus>
+    </div>  
+  </form>
+ <form >
+    <div class="form-group ">
+	 <span> <h2>Name</h2> </span>
+          <label for="frmNameA"></label>
+      <input type="text"  class="input" name="name" id="two" required autocomplete="name" placeholder="" >
+    </div>  
+			  <a href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/packetid.html"><button type="button" class="btn btn-primary">Go</button></a>
+
+  </form>
+</div></nav></div>
+<script>
+		function doFirst()
+    {
+        var button = document.getElementById("button");
+        window.addEventListener("click", saveCrap, false);
+
+    }
+    function saveCrap()
+    {
+        var one = document.getElementById("one").value;
+        var two = document.getElementById("two").value;
+        localStorage.setItem(one, two);
+    
+        document.getElementById("one").value = "";
+        document.getElementById("two").value = "";
+    }
+    /* function display() 
+    {
+        var rightbox = document.getElementById("rightbox");
+        rightbox.innerHTML = "";
+
+        for (var x = 0; x < localStorage.length; x++)
+        {
+            var a = localStorage.key(x);
+            var b = localStorage.getItem(a);
+            rightbox.innerHTML += a + " - " + b + "<br/>";
+        }
+
+    }*/
+				//	localStorage.clear()
+
+    window.addEventListener("load", doFirst, false);
+(function(m){if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&navigator.userAgent.indexOf("AppleWebKit")>-1)){return}var l=m.document;if(!l.querySelector){return}var n=l.querySelector("meta[name=viewport]"),a=n&&n.getAttribute("content"),k=a+",maximum-scale=1",d=a+",maximum-scale=10",g=true,j,i,h,c;if(!n){return}function f(){n.setAttribute("content",d);g=true}function b(){n.setAttribute("content",k);g=false}function e(o){c=o.accelerationIncludingGravity;j=Math.abs(c.x);i=Math.abs(c.y);h=Math.abs(c.z);if(!m.orientation&&(j>7||((h>6&&i<8||h<8&&i>6)&&j>5))){if(g){b()}}else{if(!g){f()}}}m.addEventListener("orientationchange",f,false);m.addEventListener("devicemotion",e,false)})(this);
+//setTimeout(function(){ document.querySelector("meta[name=viewport]").setAttribute('content','width=device-width, initial-scale=1');}, 500); if problem with device orientation use this.
+// window.onorientationchange = function(){window.location.reload();};
+</script>
+</body>
+</html>

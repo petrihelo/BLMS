@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Packet</title>
+  <meta charset="utf-8">
+  <!-- < meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  * {
+    box-sizing: border-box;
+   -webkit-box-sizing
+   -moz-box-sizing: border-box;
+   
+}
+  body{
+    margin:50px 0; 
+    padding:0px;
+    text-align:center;
+	
+  } 
+  .btn{
+	font-size:25px;
+	margin-bottom:12px;
+	border-radius: 5px;
+	padding:4px 15px;
+	    width:281px;
+    height: 63px;
+    font-size:30px;
+  }
+
+
+
+@media only screen and (orientation: landscape) {
+  .btn{
+      width:75%;
+	height: 75px;
+	font-size:45px;
+    margin-bottom:23px;
+    border-radius: 5px;
+	padding:8px 8px;
+
+  } 
+
+  body{
+    margin:50px 0; 
+    padding:0px;
+    text-align:center;
+	
+  } 
+  .koko{
+      margin-top:-44px;
+
+  } 
+
+    </style>
+
+</head>
+<body >
+<div class="koko">
+<nav class="navbar navbar-light menu" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/mainmenu.html">Blockchain Logistics Tracker</a>
+      </div> </div>
+<div class="container">
+  <form>
+    <div class="form-group ">
+	  <a href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/login.html">   <button type="button" class="btn btn-primary">Add Packet</button></a>
+    </div>
+	    <div class="form-group ">
+	<a href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/recentrack.html">  <button type="button" class="btn btn-primary">Search Packet</button></a>
+    </div>
+  </form>
+</div></nav></div> 
+<script>
+(function(m){if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&navigator.userAgent.indexOf("AppleWebKit")>-1)){return}var l=m.document;if(!l.querySelector){return}var n=l.querySelector("meta[name=viewport]"),a=n&&n.getAttribute("content"),k=a+",maximum-scale=1",d=a+",maximum-scale=10",g=true,j,i,h,c;if(!n){return}function f(){n.setAttribute("content",d);g=true}function b(){n.setAttribute("content",k);g=false}function e(o){c=o.accelerationIncludingGravity;j=Math.abs(c.x);i=Math.abs(c.y);h=Math.abs(c.z);if(!m.orientation&&(j>7||((h>6&&i<8||h<8&&i>6)&&j>5))){if(g){b()}}else{if(!g){f()}}}m.addEventListener("orientationchange",f,false);m.addEventListener("devicemotion",e,false)})(this);
+//setTimeout(function(){ document.querySelector("meta[name=viewport]").setAttribute('content','width=device-width, initial-scale=1');}, 500); if problem with device orientation use this.
+// window.onorientationchange = function(){window.location.reload();};
+</script>
+</body>
+</html>

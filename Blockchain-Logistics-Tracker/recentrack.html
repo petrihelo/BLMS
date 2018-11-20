@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Recent Track</title>
+  <meta charset="utf-8">
+  <!-- < meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style> 
+  * {
+    box-sizing: border-box;
+   -webkit-box-sizing
+   -moz-box-sizing: border-box;
+   
+}
+  body{
+    margin:50px 0; 
+    padding:0px;
+    text-align:center;
+	
+  }
+  .btn{
+	font-size:25px;
+	margin-bottom:12px;
+	border-radius: 5px;
+	padding:7px 12px;
+	
+  }
+    .glyphicon {
+      font-size: 40px;
+	    float:right;
+}
+  .input{
+    width:260px;
+    height: 50px;
+    font-size:30px;
+  
+  }
+    .input:focus {
+    outline: #4CAF50 solid 1px;    
+}
+  h2{
+   margin-top: 40px;
+   margin-right:65px;
+   font-size:42px;
+ 
+  }
+@media only screen and (orientation: landscape) {
+  .btn{
+   font-size:40px;
+    margin-bottom:23px;
+    border-radius: 5px;
+	padding:8px 8px;
+
+  }
+    h2{
+   margin-top: 40px;
+   font-size:65px;
+ 
+  }
+  body{
+    margin:50px 0; 
+    padding:0px;
+    text-align:center;
+	
+  }
+  .input{
+    width:75%;
+	height: 75px;
+	font-size:45px;
+	
+  }
+    .input:focus {
+    outline: #4CAF50 solid 1px;    
+}
+    .koko{
+      margin-top:-44px;
+
+  }
+    .glyphicon {
+      font-size: 40px;
+	    float:right;
+}
+}
+    </style>
+
+</head>
+<body>
+<div class="koko">
+<nav class="navbar navbar-light menu" style="background-color: #e3f2fd;">
+      <a href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/mainmenu.html">    <span class="glyphicon glyphicon-home"></span></a>
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://www.cc.puv.fi/~e1401168/ekasivu/barcode2/mainmenu.html">Blockchain Logistics Tracker</a>
+      </div> </div>
+<div class="container">
+  <h2>Recent Track</h2>
+      <form action="/search" method="post" id="searchForm" autocomplete="on"> 
+
+    <div class="form-group ">
+      <input type="search"  list="predictive"class="input"  name="searchTerm"  placeholder="" required autocomplete="searchTerm" autofocus>
+	            <datalist id="predictive"></datalist>
+	 <label for="frmNameA"> <button type="submit" class="btn btn-primary">Go</button></label> 
+    </div>  
+  </form>
+</div></nav></div><div id="id01" class="table-responsive"></div>
+<script>
+var packetID = Q("#packetID");
+  var suggestions=";2409;vbsfb;Thanhs packet;1511-1221;777;dht;1411-1422;presentation?;1411-249;5541;162;Thanh123;13112017";
+  suggestions=suggestions.split(';');
+  var retrievedPackets='';
+
+  for(var suggestIndex=0;suggestIndex<suggestions.length;suggestIndex+=1)
+  {
+    if(suggestions[suggestIndex]!=null&&suggestions[suggestIndex]!="")
+    {
+      document.getElementById("predictive").innerHTML+="<option value="+suggestions[suggestIndex]+">";
+    }
+  }
+
+  var jsonRetrievedPackets = JSON.parse(retrievedPackets);
+
+  if(retrievedPackets!=null)
+    myFunction(jsonRetrievedPackets);
+
+  function myFunction(jsonRetrievedPackets) {
+
+    var out = "<tr><th class='viewing'>Timestamp</th><th class='viewing'>Packet ID</th><th class='viewing'>Transaction</th><th class='viewing'>User Name</th><th class='viewing'>Company Name</th><th class='viewing'>Activity</th><th class='viewing'>Address</th></tr>";
+    //var links = [];
+    for(var entry in jsonRetrievedPackets.entries) {
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].timestamp +"</td>";
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].packetID +"</td>";
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].txHash +"</td>";
+      //out += "<td class='col'>" + <a id="transactionlink" target="_blank" href="">jsonRetrievedPackets.entries[entry].txHash</a> +"</td>";
+      //links[entry]="https://ropsten.etherscan.io/tx/"+jsonRetrievedPackets.entries[entry].txHash;
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].userName +"</td>";
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].companyName +"</td>";
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].activity +"</td>";
+      out += "<td class='col'>" + jsonRetrievedPackets.entries[entry].locationByGPS.formattedAddress +"</td></tr>";
+    }
+    /*
+    var transactionlinks = document.getElementsByClassName("transactionlink");
+    for(var link in transactionlinks)
+      transactionlinks[link].href=links[link];
+    */
+    document.getElementById("id01").innerHTML = "<table class='table'>"+out+"</table>";
+  }
+
+(function(m){if(!(/iPhone|iPad|iPod/.test(navigator.platform)&&navigator.userAgent.indexOf("AppleWebKit")>-1)){return}var l=m.document;if(!l.querySelector){return}var n=l.querySelector("meta[name=viewport]"),a=n&&n.getAttribute("content"),k=a+",maximum-scale=1",d=a+",maximum-scale=10",g=true,j,i,h,c;if(!n){return}function f(){n.setAttribute("content",d);g=true}function b(){n.setAttribute("content",k);g=false}function e(o){c=o.accelerationIncludingGravity;j=Math.abs(c.x);i=Math.abs(c.y);h=Math.abs(c.z);if(!m.orientation&&(j>7||((h>6&&i<8||h<8&&i>6)&&j>5))){if(g){b()}}else{if(!g){f()}}}m.addEventListener("orientationchange",f,false);m.addEventListener("devicemotion",e,false)})(this);
+//setTimeout(function(){ document.querySelector("meta[name=viewport]").setAttribute('content','width=device-width, initial-scale=1');}, 500); if problem with device orientation use this.
+// window.onorientationchange = function(){window.location.reload();};
+</script>
+</body>
+</html>
